@@ -25,10 +25,10 @@ object GameRepositoryImpl : GameRepository {
             Level.EASY -> {
                 GameSettings(
                     maxSum = 15,
-                    minCountOfRightAnswers = 10,
+                    minCountOfRightAnswers = 1,
                     minPercentOfRightAnswers = 70,
                     countOfOptions = 6,
-                    seconds = 60
+                    seconds = 30
                 )
             }
             Level.MEDIUM -> {
