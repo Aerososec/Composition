@@ -43,12 +43,8 @@ class GameFinishedFragment : Fragment() {
         val minPercent = "Необходимый процент правильных ответов ${gameResult.gameSettings.minPercentOfRightAnswers}"
         val rightPercent = "Процент правильных ответов: ${gameResult.countOfRightAnswers / gameResult.countAnswers * 100}"
         val scoreAnswers = "Ваш счет: ${gameResult.countOfRightAnswers}"
+        binding.gameResult = safeArgs.gameResult
         with(binding) {
-            if (gameResult.winners)
-                emojiResult.setImageResource(R.drawable.ic_smile)
-            else
-                emojiResult.setImageResource(R.drawable.ic_sad)
-            tvRequiredAnswers.text = requireAnswers
             tvScoreAnswers.text = scoreAnswers
             tvRequiredPercentage.text = minPercent
             tvScorePercentage.text = rightPercent

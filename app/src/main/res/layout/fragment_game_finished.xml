@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="gameResult"
+            type="com.example.composition.domain.entities.GameResult"
+            />
+    </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,6 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/ic_smile"
+        app:requireSmile="@{gameResult.winners}"
         />
 
     <TextView
@@ -28,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:text="@string/required_score"
+        app:requireAnswer="@{gameResult.countOfRightAnswers}"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@id/tv_score_answers"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,3 +93,4 @@
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
